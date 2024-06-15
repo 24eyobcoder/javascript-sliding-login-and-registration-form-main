@@ -9,13 +9,28 @@ const name_field = document.querySelector(".name-field");
 const password_field = document.querySelector(".password-field");
 const sign_btn = document.querySelector(".sign-btn");
 
+
+const nameLists = ["Amanuel Yohannes","Dawit Belay","Helen Tesfa","Abubeker Beshir","Degefu Bekele","Mulusew Abebe","Beyene Mekuria","Adugna Zenebe","Ejigu Ledamo"]
+
 function saveName(e) {
-    localStorage.setItem('name', e.target.value);
+    localStorage.clear();
+    if (nameLists.includes(e.target.value)) {
+      localStorage.setItem('name', e.target.value);
+    } else {
+      localStorage.setItem('name', null)
+    }
 }
 
 function signIn(e) {
     e.preventDefault(); // Prevent form submission
-    window.location.href = '/display.html'; // Redirect to the details page
+    const name = localStorage.getItem('name')
+
+    if (!nameLists.includes(name)) {
+      alert('INVALID CREDENTIALS PLEASE TRY AGAIN')
+    } else {
+      window.location.href = '/display.html'; // Redirect to the details page
+    }
+  
 }
 
 password_field.addEventListener("input", saveName); // Listen for input event
