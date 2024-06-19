@@ -10,7 +10,7 @@ const password_field = document.querySelector(".password-field");
 const sign_btn = document.querySelector(".sign-btn");
 
 
-const nameLists = ["Amanuel Yohannes","Dawit Belay","Helen Tesfa","Abubeker Beshir","Degefu Bekele","Mulusew Abebe","Beyene Mekuria","Adugna Zenebe","Ejigu Ledamo"]
+const nameLists = ["Mekdes Kalaeyu","Adiam Tesfameskel","Ashenafi Amache","Amanuel Yohannes","Dawit Belay","Helen Tesfa","Abubeker Beshir","Degefu Bekele","Mulusew Abebe","Beyene Mekuria","Adugna Zenebe","Ejigu Ledamo"]
 
 function saveName(e) {
     localStorage.clear();
